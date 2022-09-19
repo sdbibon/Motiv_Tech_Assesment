@@ -1,0 +1,5 @@
+curl -X POST "http://127.0.0.1:8081/addUser" -m 30 -v
+
+curl -X GET "http://127.0.0.1:8081/1" -m 30 -v
+
+curl -X "DELETE" "http://127.0.0.1:8081/deleteUser"
