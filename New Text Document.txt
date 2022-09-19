@@ -1,0 +1,5 @@
+curl -X POST "https://echo.epa.gov" -m 30 -v
+
+curl -X GET "https://itunes.apple.com/search?term=Michael%20Jackson" -m 30 -v
+
+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
