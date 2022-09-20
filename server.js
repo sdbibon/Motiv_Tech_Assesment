@@ -51,6 +51,25 @@ con.connect(function(err) {
   //  console.log(result);
   //});
 
+  /*
+  for (let i = 0; i < 9; i++) {
+      console.log(i);
+  }
+  const arr = [ 1, 2, 3 ];
+
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+   }
+
+  let i = 1;
+
+  while (i < 10) {
+   console.log(i);
+   i++; 
+  }
+  */
+
+
   con.query("SELECT * FROM todoapp.customer;", function (err, result, fields) {
     if (err) throw err;
     console.log(result);
@@ -73,7 +92,11 @@ app.post('/addUser', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
       data = JSON.parse( data );
       data["user4"] = user["user4"];
+      
       console.log( data );
+     
+      
+
       res.end( JSON.stringify(data));
       
       console.log(JSON.stringify(data));
@@ -81,6 +104,9 @@ app.post('/addUser', function (req, res) {
       const object1 = JSON.parse(JSON.stringify(data));
       
       console.log(Object.keys(object1))
+
+      //console.log(Object.keys(object1)[0])
+
       console.log(Object.values(object1))
 
       //const object2 = JSON.parse(JSON.stringify(Object.values(object1)));
