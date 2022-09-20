@@ -3,3 +3,16 @@ curl -X POST "https://echo.epa.gov" -m 30 -v
 curl -X GET "https://itunes.apple.com/search?term=Michael%20Jackson" -m 30 -v
 
 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
+
+npm install pg  
+npm install mysql  
+npm install mongodb
+
+
+
+git init
+git add <folder1> <folder2> <etc.>
+git commit -m "Your message about the commit"
+git remote add origin https://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@github.com/sdbibon/Motiv_Tech_Assesment.git
+git push -u origin master
+git push origin master

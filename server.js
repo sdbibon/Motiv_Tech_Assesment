@@ -67,6 +67,15 @@ con.connect(function(err) {
    console.log(i);
    i++; 
   }
+  
+  // dictionary	
+  var dict = {
+  Name: "Eric",
+  Age = 23
+  Job: "Freelancer",
+  Skills : "JavaScript"
+}; 	
+
   */
 
 
@@ -84,6 +93,12 @@ var user = {
       "password" : "password4",
       "profession" : "teacher",
       "id": 4
+   },
+    "user5" : {
+      "name" : "lane",
+      "password" : "password4",
+      "profession" : "doctor",
+      "id": 5
    }
 }
 
@@ -91,12 +106,11 @@ app.post('/addUser', function (req, res) {
    // First read existing users.
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
       data = JSON.parse( data );
+      data["user5"] = user["user5"];
       data["user4"] = user["user4"];
       
       console.log( data );
      
-      
-
       res.end( JSON.stringify(data));
       
       console.log(JSON.stringify(data));
