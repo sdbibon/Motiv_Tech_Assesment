@@ -1,0 +1,19 @@
+{
+  "roles": [
+    {
+       "id": "1",
+       "team": "1",
+       "name": "Editor",
+       "permissions": ["1","2"]
+       "users": ["1"]
+},
+    {
+       "id": "2",
+       "team": "1",
+       "name": "Guest",
+       "permissions": ["1"]
+       "users": ["2"]
+}
+
+]
+}

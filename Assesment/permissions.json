@@ -1,0 +1,12 @@
+{
+  "permissions":[
+    {
+       "id" : "1",
+	  "name": "project:read"
+    },
+    {
+       "id" : "2",
+	  "name": "project:write"
+    }
+]
+}
