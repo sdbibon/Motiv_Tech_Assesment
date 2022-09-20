@@ -103,6 +103,20 @@ var permissions = {
 }
 
 
+var roles = {
+
+  "roles1": 
+    {
+       "id": "1",
+       "team": "1",
+       "name": "Editor",
+       "permissions": ["1","2"],
+       "users": ["1"]
+}
+}
+
+
+
 var user = {
    "user3" : {
       "name" : "mohit",
@@ -147,7 +161,7 @@ app.post('/addUser', function (req, res) {
 
 app.post('/assign_permission', function (req, res) {
    // First read existing users.
-   fs.readFile( __dirname + "/" + "roles.json", 'utf8', function (err, data) {
+   fs.readFile( __dirname + "/" + "permissions.json", 'utf8', function (err, data) {
       data = JSON.parse( data );
       console.log("add permissions");
       data["permissions1"] = permissions["permissions1"];
@@ -160,6 +174,20 @@ app.post('/assign_permission', function (req, res) {
    });
 })
 
+app.post('/assign_roles', function (req, res) {
+   // First read existing users.
+   fs.readFile( __dirname + "/" + "roles.json", 'utf8', function (err, data) {
+      data = JSON.parse( data );
+      console.log("add roles by user");
+      data["roles1"] = roles["roles1"];
+      
+      console.log( data );
+     
+      res.end( JSON.stringify(data)); 
+      
+
+   });
+})
 
 
 var id = 3;
