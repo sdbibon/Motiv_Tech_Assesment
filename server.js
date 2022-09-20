@@ -24,6 +24,22 @@ con.connect(function(err) {
   //console.log("Table created");  
   //});
   
+  
+  // update
+  //var sql = "UPDATE todoapp.customer SET first_name = 'Alfred', last_name = 'Schmidt' WHERE visit_id = 2;";  
+  //con.query(sql, function (err, result) {  
+  //if (err) throw err;  
+  //console.log("Table created");  
+  //});
+
+  
+  // insert
+  //var sql = "insert into todoapp.customer(visit_id,first_name,last_name) values(2,'john','don')";  
+  //con.query(sql, function (err, result) {  
+  //if (err) throw err;  
+  //console.log("Table created");  
+  //});
+  
 
   con.query("SELECT * FROM todoapp.customer", function (err, result, fields) {
     if (err) throw err;
