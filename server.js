@@ -32,16 +32,26 @@ con.connect(function(err) {
   //console.log("Table created");  
   //});
 
-  
+  /*
   // insert
-  //var sql = "insert into todoapp.customer(visit_id,first_name,last_name) values(2,'john','don')";  
-  //con.query(sql, function (err, result) {  
-  //if (err) throw err;  
-  //console.log("Table created");  
-  //});
-  
+  let s1 = "aniket"
+  let s2 = "nikhilesh"
 
-  con.query("SELECT * FROM todoapp.customer", function (err, result, fields) {
+  var sql = "insert into todoapp.customer(visit_id,first_name,last_name) values(3,'" + s1 + "','" + s2 + "')";  
+  con.query(sql, function (err, result) {  
+  if (err) throw err;  
+  console.log("Table created");  
+  });
+  */
+  
+  
+  //var s = "john";
+  //con.query("SELECT * FROM todoapp.customer WHERE first_name = '" + s + "'", function (err, result, fields) {
+  //  if (err) throw err;
+  //  console.log(result);
+  //});
+
+  con.query("SELECT * FROM todoapp.customer;", function (err, result, fields) {
     if (err) throw err;
     console.log(result);
   });
