@@ -65,6 +65,18 @@ app.post('/addUser', function (req, res) {
       data["user4"] = user["user4"];
       console.log( data );
       res.end( JSON.stringify(data));
+      
+      console.log(JSON.stringify(data));
+      
+      const object1 = JSON.parse(JSON.stringify(data));
+      
+      console.log(Object.keys(object1))
+      console.log(Object.values(object1))
+
+      //const object2 = JSON.parse(JSON.stringify(Object.values(object1)));
+      //console.log(Object.keys(object2))
+      //console.log(Object.values(object2))
+
    });
 })
 
