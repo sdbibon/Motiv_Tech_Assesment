@@ -2,6 +2,37 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 
+var mysql = require('mysql');  
+var con = mysql.createConnection({  
+  host: "localhost",  
+  user: "root",  
+  password: "password",
+  database: "todoapp"  
+});  
+
+
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  
+  
+  // Creating table
+  //var sql = "CREATE TABLE todoapp.users (name VARCHAR (50) NOT NULL, password VARCHAR (50) NOT NULL,profession VARCHAR (50) NOT NULL,Id VARCHAR (50) NOT NULL);";  
+  //con.query(sql, function (err, result) {  
+  //if (err) throw err;  
+  //console.log("Table created");  
+  //});
+  
+
+  con.query("SELECT * FROM todoapp.customer", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+
+});  
+
+
 var user = {
    "user4" : {
       "name" : "mohit",
@@ -35,6 +66,13 @@ app.delete('/deleteUser', function (req, res) {
    });
 })
 
+app.get('/listUsers', function (req, res) {
+   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+      console.log( data );
+      res.end( data );
+   });
+})
+
 app.get('/:id', function (req, res) {
    // First read existing users.
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
@@ -46,14 +84,7 @@ app.get('/:id', function (req, res) {
 })
 
 
-app.get('/listUsers', function (req, res) {
-   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
-      console.log( data );
-      res.end( data );
-   });
-})
-
-var server = app.listen(8081, function () {
+var server = app.listen(8000, function () {
    var host = server.address().address
    var port = server.address().port
    console.log("Example app listening at http://%s:%s", host, port)
